@@ -19,12 +19,14 @@ mongoose.connect(
   console.log(db);
 });
 
+//schema //planSchema pr then nhi lag rha toh ye sync h
 let planSchema = new mongoose.Schema({
   name:String,
   price:Number,
 });
 
-const planModel = mongoose.model("plancollection" , planSchema);
+//model
+const planModel = mongoose.model("plancollection" , planSchema); //  ye bhi sync h , toh mtlb poora schema define ke baad hi chelega tbhi create()
 
 planModel.create({
   name:"Non vegan",
