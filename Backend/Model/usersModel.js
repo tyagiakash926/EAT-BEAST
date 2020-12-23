@@ -38,7 +38,10 @@ mongoose.connect(
         default:"user"
     }
 })
-
+//it will called before create 
+userSchema.pre("save" , function(){
+    this.confirmPassword = undefined;
+  })
 const userModel = mongoose.model("userscollection",userSchema);
 
 module.exports = userModel;

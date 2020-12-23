@@ -1,41 +1,65 @@
 const express = require("express");
 const fs = require("fs");
+var jwt = require('jsonwebtoken');
 const plans = require("./db/plans.json");
 const users = require("./db/users.json");
 const { v4: uuidv4 } = require("uuid");
 const { json } = require("express");
+const { JsonWebTokenError } = require("jsonwebtoken");
+
 
 const app = express();
 
 // it tracks incoming request and see if there is data in the request => the data will be fed in req.body
 app.use(express.json());
 
-// app.httpMethod( appRoute , cb function( request , response   )      )
-const mongoose = require("mongoose");
-mongoose.connect(
-  "mongodb+srv://admin:admin@cluster0.cvhjx.mongodb.net/test?retryWrites=true&w=majority",
-  {useNewUrlParser: true , useUnifiedTopology: true})
-.then((db)=>{
-  console.log(db);
-});
+// // app.httpMethod( appRoute , cb function( request , response   )      )
+// const mongoose = require("mongoose");
+// mongoose.connect(
+//   "mongodb+srv://admin:admin@cluster0.cvhjx.mongodb.net/test?retryWrites=true&w=majority",
+//   {useNewUrlParser: true , useUnifiedTopology: true})
+// .then((db)=>{
+//   console.log(db);
+// });
 
-//schema //planSchema pr then nhi lag rha toh ye sync h
-let planSchema = new mongoose.Schema({
-  name:String,
-  price:Number,
-});
+// //schema //planSchema pr then nhi lag rha toh ye sync h
+// let planSchema = new mongoose.Schema({
+//   name:String,
+//   price:Number,
+// });
 
-//model
-const planModel = mongoose.model("plancollection" , planSchema); //  ye bhi sync h , toh mtlb poora schema define ke baad hi chelega tbhi create()
+// //model
+// const planModel = mongoose.model("plancollection" , planSchema); //  ye bhi sync h , toh mtlb poora schema define ke baad hi chelega tbhi create()
 
-planModel.create({
-  name:"Non vegan",
-  price:50,
-}).then( (plan) => {
-  console.log(plan);
+// planModel.create({
+//   name:"Non vegan",
+//   price:50,
+// }).then( (plan) => {
+//   console.log(plan);
+// })
+// .catch((error)=>{
+//   console.log(error);
+// })
+
+app.post("/tokenCreator",async function(req,res){
+  try{
+    const token = jwt.sign({id:"12345676"},"dhgjhdghjs");
+    console.log(token);
+    res.json({
+      data:token
+    })
+  }catch(error){
+    res.json({
+      error
+    })
+  }
 })
-.catch((error)=>{
-  console.log(error);
+
+app.post("/tokenVerify",function(req,res){
+  const {token } = req.body;
+  console.log(token);
+  const payload = jwt.verify(token,"dhgjhdghjs");
+  console.log(payload);
 })
 
 

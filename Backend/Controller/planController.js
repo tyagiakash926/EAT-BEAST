@@ -72,10 +72,15 @@ async function createPlan(req,res){
     try{
       let {id} = req.params;
       let updateObj = req.body;
-      let plan = await planModel.findByIdAndUpdate(id,updateObj,{new:true});
+      // let plan = await planModel.findByIdAndUpdate(id,updateObj,{new:true});
+      let plan = await planModel.findById(id);
+      for(key in updateObj){
+        plan[key] = updateObj[key]
+      }
+      let updatedPlan = await plan.save();
       res.json({
         message:"update plan by id",
-        data:plan,
+        data:updatedPlan,
       });
     }
     catch(error){

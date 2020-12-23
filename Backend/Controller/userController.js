@@ -36,55 +36,69 @@ async function createUser(req,res){
     }
   }
   async function getUserById(req,res){
-   try{
-    let {id} = req.params;
-    let user = await userModel.findById(id);
-    res.json({
-      message:"user get by id",
-      data:user,
-    });
-   }
-   catch(error){
-    console.log(error);
-      res.json({
-        message:"fail to get user by id",
-        error:error
-      });
-   }
-  }
-  async function updateUserById(req,res){
     try{
-      let {id} = req.params;
-      let updateObj = req.body;
-      let user = await userModel.findByIdAndUpdate(id,updateObj,{new:true});
+      let id = req.id;
+      let user = await userModel.findById(id);
       res.json({
-        message:"update user by id",
-        data:user,
+          message:"user get by id",
+          data:user,
       });
     }
     catch(error){
       console.log(error);
-      res.json({
-        message:"fail to update user by id",
-        error:error
-      });
+        res.json({
+          message:"fail to get user by id",
+          error:error
+        });
+     }
+  }
+  async function updateUserById(req,res){
+    try{
+      let id = req.id;
+      // console.log("in updateUser by id");
+      let updateObj = req.body.updateObj;
+      let user = await userModel.findById(id);
+      // console.log(user);
+      for(key in updateObj){
+        user[key] = updateObj[key];
+      }
+      // console.log(user);
+      let updatedUser = await user.save();
+      console.log("Hii")
+      res.status(201).json({
+        message:"Updated User",
+        data : updatedUser
+      })
+  
+    }
+    catch(error){
+      res.status(501).json({
+        message:"Failed to update user",
+        error
+      })
     }
   }
   async function deleteUserById(req,res){
     try{
-      let {id }= req.params;
-      let deletedUser = await userModel.findByIdAndDelete(id);
-      res.json({
-        message:"delete user by id",
-        data:deletedUser,
-      });
+      let id = req.id;
+      let deletedUser =await userModel.findByIdAndDelete(id);
+      if(deletedUser){
+        res.status(200).json({
+          message:"User deleted Succesfulyy !!",
+          data : deletedUser
+        })
+      }
+      else{
+        res.status(200).json({
+          message:"User not Found !!!"
+        })
+      }
     }
     catch(error){
-      console.log(error);
-      res.json({
-        message:"fail to delete user by id",
-        error:error
-      });
+      res.status(501).json({
+        message:"Failed to delete",
+        error
+      })
     }
   }
 
