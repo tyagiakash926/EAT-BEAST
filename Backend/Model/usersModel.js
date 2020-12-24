@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const crypto = require("crypto");
 mongoose.connect(
     "mongodb+srv://admin:admin@cluster0.cvhjx.mongodb.net/test?retryWrites=true&w=majority",
     {useNewUrlParser: true , useUnifiedTopology: true})
@@ -36,12 +37,32 @@ mongoose.connect(
         type:String,
         enum:["admin","user","delivery boy","restaurant owner"],
         default:"user"
-    }
+    },
+    pwToken:String,
+    tokenTime:String
 })
 //it will called before create 
 userSchema.pre("save" , function(){
     this.confirmPassword = undefined;
   })
+
+  userSchema.methods.createResetToken = function(){
+    let token = crypto.randomBytes(32).toString("hex");
+    let time = Date.now() * 60 * 10 * 1000;
+    // token time banado
+    this.pwToken = token;
+    this.tokenTime = time;
+    return token;
+    // and set in current document
+    // save()
+  }
+
+  userSchema.methods.resetPasswordHandler = function(password , confirmPassword){
+    this.password = password;
+    this.confirmPassword = confirmPassword;
+    this.pwToken =undefined;
+    this.tokenTime=undefined;
+  }
 const userModel = mongoose.model("userscollection",userSchema);
 
 module.exports = userModel;

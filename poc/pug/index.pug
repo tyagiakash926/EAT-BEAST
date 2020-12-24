@@ -1,0 +1,23 @@
+doctype html
+html
+ head
+  title pug Intro
+ body
+  h1 Hii am from index.pug
+  p hii iam p tag
+  p.
+   i am new line
+   i mam sencond new lne
+   i am used for multiple line in p tag
+  .myclass hey iam div with class
+  #myid hey iam div with id
+  h1.myclass iam h1 with class
+  a(href="www.google.com") go to google
+  -const classes = ["blue" , "ornage" ,"green"]
+  p(class = classes)
+  -const items = ["mobile" , "laptop" , "charger" , "pen"]
+  ul
+   for item in items
+    li=item
+   else
+    li no items
