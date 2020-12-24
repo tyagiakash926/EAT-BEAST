@@ -58,8 +58,12 @@ async function login(req,res){
 }
 
 async function protectRoute(req,res,next){
+    // res.json({
+    //     data:req.headers
+    // })
     try{
-        const {token} = req.body;
+        const token = req.headers.authorization.split(" ").pop();
+        console.log(token);
         const payload = jwt.verify(token,SECRET_KEY);
         console.log(payload)
         if(payload){
@@ -78,6 +82,28 @@ async function protectRoute(req,res,next){
         })
     }
 }
+
+async function isAuthorised(req,res,next){
+    try{
+        let id = req.id;
+        let user = await userModel.findById(id);
+        console.log(user);
+        if(user.role == "admin"){
+          next();
+        }else{
+          res.status(200).json({
+            message:"You dont have admin rights !!!"
+          })
+        }
+      }
+      catch(error){
+        res.status(501).json({
+          message:"Failed to Authorize",
+          error
+        })
+      }
+}
 module.exports.signup= signup;
 module.exports.login= login;
 module.exports.protectRoute = protectRoute;
+module.exports.isAuthorised = isAuthorised;
