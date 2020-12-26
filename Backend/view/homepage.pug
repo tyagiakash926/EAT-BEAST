@@ -1,0 +1,124 @@
+extends base.pug
+block header
+ .showcase
+  include header.pug
+  .showcase-content
+    h1 MEAL PLANS.
+    h1
+        | FOR 
+        span#changing-text
+    .showcase-buttons
+        .btn Book Now
+        .btn-fade Show Me More
+block content
+ .features
+  .features-heading
+    h1 Awesome Features
+  .features-templates
+    .features-templates-info
+      .features-templates-info-icon
+        i.fas.fa-calendar-day(aria-hidden='true')
+      .features-templates-info-content
+        h1 24*7
+        p
+          | Never cook again ! We really mean that. Our
+          | Subcription plan coverage 365 days coverage. You can
+          | choose any plan and order flexibly in your style!
+    .features-templates-info
+      .features-templates-info-icon
+        i.fas.fa-shipping-fast(aria-hidden='true')
+      .features-templates-info-content
+        h1 After 30min Free
+        p
+          | You're just 20 minutes away from your delicious Food and Super healty meals
+          | delivery to your place. If we are not able to provide in 30 minutes then
+          | the delecious food will Free Of Cost!!
+    .features-templates-info
+      .features-templates-info-icon
+        i.fas.fa-carrot(aria-hidden='true')
+      .features-templates-info-content
+        h1 100% Desi
+        p
+          | All of our vegetables are organic , fresh and local. Animals
+          | all raised with adding Hormones and antibiotic. Good for health ,
+          | Enviroment , and also taste better!!
+ .instruction
+  .instruction-heading
+    h1 STEPS TO FOLLOW
+  .instruction-steps
+    .instruction-steps-image
+      img(src='./images/pexels-jess-bailey-designs-853006.jpg' alt='')
+    .instruction-steps-follow
+      h3
+        i.fa.fa-bullhorn(aria-hidden='true')
+        |  Choose the Subscription that suits you and order today. By just SignUp.
+      h3
+        i.fa.fa-bullhorn(aria-hidden='true')
+        |  Order your delicious meal using our mobile app or website. Or you can even call us!
+      h3
+        i.fa.fa-bullhorn(aria-hidden='true')
+        |  Enjoy Your meals in less than 20 minutes!
+ .reviews
+  .reviews-heading
+    h1 Awesome Reviews
+  .reviews-templates
+    .reviews-templates-info
+      .reviews-templates-info-icon
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+      .reviews-templates-info-content
+        h1 Divine
+        p
+          | Never cook again ! We really mean that. Our
+          | Subcription plan coverage 365 days coverage. You can
+          | choose any plan and order flexibly in your style!
+    .reviews-templates-info
+      .reviews-templates-info-icon
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+      .reviews-templates-info-content
+        h1 PewDie Pie
+        p
+          | You're just 20 minutes away from your delicious Food and Super healty meals
+          | delivery to your place. If we are not able to provide in 30 minutes then
+          | the delecious food will Free Of Cost!!
+    .reviews-templates-info
+      .reviews-templates-info-icon
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+      .reviews-templates-info-content
+        h1 Mr. Beast
+        p
+          | All of our vegetables are organic , fresh and local. Animals
+          | all raised with adding Hormones and antibiotic. Good for health ,
+          | Enviroment , and also taste better!!
+ .container-contact-us
+  .row-heading
+    h1 Contact Us
+  .row
+    h4(style='text-align:center') We'd love to hear from you!
+  .row.input-container
+    .col-xs-12
+      .styled-input.wide
+        input(type='text' required='')
+        label Name
+    .col-md-6.col-sm-12
+      .styled-input
+        input(type='text' required='')
+        label Email
+    .col-md-6.col-sm-12
+      .styled-input(style='float:right;')
+        input(type='text' required='')
+        label Phone Number
+    .col-xs-12
+      .styled-input.wide
+        textarea(required='')
+        label Message
+    .col-xs-12
+      .btn-lrg.submit-btn Send Message
