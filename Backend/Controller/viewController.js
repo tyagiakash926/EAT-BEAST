@@ -18,10 +18,13 @@ async function getPlansPage(req,res){
     }
     catch(error){
         console.log(error);
-    }
-    
+    } 
+}
+function getForgetPasswordPage(req,res){
+    res.render("forgetpassword.pug");
 }
 module.exports.getDemoPage = getDemoPage;
 module.exports.getHomePage = getHomePage;
 module.exports.getLoginPage = getLoginPage;
 module.exports.getPlansPage = getPlansPage;
+module.exports.getForgetPasswordPage = getForgetPasswordPage;
