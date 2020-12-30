@@ -3,6 +3,7 @@ let forgetB = document.querySelector(".ghost-f");
 let bcontainer = document.querySelector(".bcontainer");
 let forgetbtn = document.querySelector(".forget-btn");
 let emailF = document.querySelector(".email-f");
+let message = document.querySelector("#message");
 
 
 
@@ -14,11 +15,8 @@ forgetbtn.addEventListener("click",async function(e){
         if(emailF.value){
             let obj = await axios.post( "http://localhost:3000/api/users/forgetpassword" , {email:emailF.value });
             console.log(obj);
-            // if(obj.data.data){
-            //     window.location.href = "/";
-            // }else{
-            //     message.innerHTML = obj.data.message;
-            // }
+            message.innerHTML = obj.data.message;
+            emailF.value="";
         }
     }
     catch(error){

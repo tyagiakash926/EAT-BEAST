@@ -1157,6 +1157,10 @@ textarea {
     height: 12%;
     width: 35%;
 }
-
+#message-password{
+    display: flex;
+align-items: center;
+justify-content: center;
+}
 
 
