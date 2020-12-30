@@ -1,7 +1,7 @@
 extends base.pug
 block header
  .showcase
-  include header.pug
+  include homepageheader.pug
   .showcase-content
     h1 MEAL PLANS.
     h1
@@ -58,6 +58,10 @@ block content
       h3
         i.fa.fa-bullhorn(aria-hidden='true')
         |  Enjoy Your meals in less than 20 minutes!
+ .plans
+  .plans-templates
+   each plan in plans
+    include planCard.pug
  .reviews
   .reviews-heading
     h1 Awesome Reviews

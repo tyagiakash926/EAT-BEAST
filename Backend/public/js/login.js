@@ -8,6 +8,7 @@ let Username = document.querySelector("#name");
 let emailSu = document.querySelector("#email-su");
 let passwordSu = document.querySelector("#password-su");
 let confirmPasswordSu = document.querySelector("#confirm-password-su");
+let message = document.querySelector("#message");
 let createAccBtn = document.querySelector(".SIGNUP-btn");
 signUpButton.addEventListener('click', () => {
 	container.classList.add("right-panel-active");
@@ -25,6 +26,11 @@ loginBtn.addEventListener("click", async function(e){
         if(email.value && password.value){
             let obj = await axios.post( "http://localhost:3000/api/users/login" , {email:email.value , password:password.value});
             console.log(obj);
+            if(obj.data.data){
+                window.location.href = "/";
+            }else{
+                message.innerHTML = obj.data.message;
+            }
         }
     }
     catch(error){

@@ -1,6 +1,34 @@
 const userModel = require("../Model/usersModel");
 var jwt = require('jsonwebtoken');
-const { SECRET_KEY } = require("../config/secret");
+const nodemailer = require("nodemailer");
+const smtpTransport = require("nodemailer-smtp-transport");
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+const { SECRET_KEY,GMAIL_ID,GMAIL_PW } = require("../config/secret");
+
+
+
+async function sendEmail(message) {
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      host: "smtp.gmail.com",
+      auth: {
+        user: GMAIL_ID,
+        pass: GMAIL_PW,
+      },
+    });
+
+    let res = await transporter.sendMail({
+      from: message.from, // sender address
+      to: message.to, // list of receivers
+      subject: message.subject, // Subject line
+      text: message.text, // plain text body
+    });
+    return res;
+  } catch (error) {
+    return error;
+  }
+}
 
 async function signup(req,res){
     try{
@@ -35,10 +63,10 @@ async function login(req,res){
             if(user.password==password){
                 // token dena h 
                 const token = jwt.sign({id: user["_id"]},SECRET_KEY)
+                res.cookie("jwt", token, { httpOnly: true });
                 res.json({
                     message:"LoggedIn successfully",
                     data:loggedInUser[0],
-                    token
                 })
             }else{
                 res.json({
@@ -71,10 +99,17 @@ async function forgetpassword(req,res){
           console.log(token);
           await user.save({validateBeforeSave:false});
           // console.log(updatedUser);
-            let resetLink = `http://localhost:3000/api/users/resetpassword/${token}`;
+            let resetLink = `http://localhost:3000/resetpassword/${token}`;
+            let message = {
+              from:GMAIL_ID,
+              to:email,
+              subject:"Reset Password",
+              text:resetLink
+            }
+            let response = await sendEmail(message);
           res.json({
             message:"Reset Link is sent to email",
-            resetLink,
+            response,
           })
         }
         else{
@@ -122,13 +157,41 @@ async function resetpassword(req,res){
       }
 }
 
+async function logout(req, res) {
+  try {
+    res.clearCookie('jwt');
+    res.redirect("/");
+  } catch (error) {
+    res.status(501).json({
+      error,
+    });
+  }
+}
+
+async function isLoggedIn(req, res, next) {
+  try {
+    let token = req.cookies.jwt;
+    const payload = jwt.verify(token, SECRET_KEY);
+    if (payload) {
+      // logged in hai
+      let user = await userModel.findById(payload.id);
+      req.name = user.name;
+      next();
+    } else {
+      //logged in nhi hai
+      next();
+    }
+  } catch (error) {
+    next();
+  }
+}
+
 async function protectRoute(req,res,next){
-    // res.json({
-    //     data:req.headers
-    // })
     try{
-        const token = req.headers.authorization.split(" ").pop();
-        console.log(token);
+        const token = req.cookies.jwt;
+        // const token = req.headers.authorization.split(" ").pop();
+        // console.log(token);
+        // // const token = req.cookies.jwt;
         const payload = jwt.verify(token,SECRET_KEY);
         console.log(payload)
         if(payload){
@@ -174,3 +237,5 @@ module.exports.protectRoute = protectRoute;
 module.exports.isAuthorised = isAuthorised;
 module.exports.forgetpassword = forgetpassword;
 module.exports.resetpassword = resetpassword; 
+module.exports.isLoggedIn = isLoggedIn;
+module.exports.logout = logout;
