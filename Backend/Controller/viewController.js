@@ -25,8 +25,12 @@ function getForgetPasswordPage(req,res){
 function getResetPasswordPage(req,res){
     res.render("resetpassword.pug",{name:req.name});
 }
+function getProfilePage(req,res){
+    res.render("profile.pug");
+}
 module.exports.getHomePage = getHomePage;
 module.exports.getLoginPage = getLoginPage;
 module.exports.getPlansPage = getPlansPage;
 module.exports.getForgetPasswordPage = getForgetPasswordPage;
 module.exports.getResetPasswordPage = getResetPasswordPage;
+module.exports.getProfilePage = getProfilePage;
