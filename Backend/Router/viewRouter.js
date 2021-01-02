@@ -5,10 +5,9 @@ const viewRouter = express.Router();
 viewRouter.use(isLoggedIn);
 viewRouter.route("").get(getHomePage);
 viewRouter.route("/logout").get(logout);
-viewRouter.route("/profile").get(getProfilePage);
 viewRouter.route("/login").get(getLoginPage);
 viewRouter.route("/plans").get(getPlansPage);
 viewRouter.route("/resetpassword/:token").get(getResetPasswordPage);
 viewRouter.route("/forgetpassword").get(getForgetPasswordPage);
-
+viewRouter.route("/profile").get(getProfilePage);
 module.exports = viewRouter;

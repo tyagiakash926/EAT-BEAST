@@ -4,12 +4,14 @@ block content
   .profile-content-container
     .container-profile-page
       .profile-image
-        img(src='/images/pexels-wallace-chuck-4580470.jpg' alt='')
-      .profile-img-text
-        h1 change the profile
-        i.fas.fa-camera
+        img(src=user.pImage)
+      label(for='imgUpload')
+        .profile-img-text
+          h1 change the profile
+          i.fas.fa-camera
+        input#imgUpload(type='file' name='image' style='display: none;')
       .profile-image-name
-        .profile-image-name-n David Peterson
+        .profile-image-name-n #{user.name}
         .edit-profile-info Edit
   .container-profile-info
     input#name-edit-profile(type='name' placeholder='Name')
@@ -19,3 +21,5 @@ block content
     .save-and-cancel-btn
       #profile-edit-save-btn.save-btn Save
       #profile-edit-cancel-btn.cancel Cancel
+block scripts
+ script(src="./js/profile.js") 

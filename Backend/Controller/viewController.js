@@ -3,6 +3,7 @@ const planModel = require("../Model/plansModel");
 async function getHomePage(req,res){
     let plans = await planModel.find();
     plans = plans.splice(0,3);
+    console.log("gethomepage" , req.name)
     res.render("homepage.pug",{name:req.name , plans:plans});
 }
 function getLoginPage(req,res){
@@ -26,7 +27,9 @@ function getResetPasswordPage(req,res){
     res.render("resetpassword.pug",{name:req.name});
 }
 function getProfilePage(req,res){
-    res.render("profile.pug");
+    console.log("getProfile page" , req.name);
+    console.log("getProfile page" , req.user)
+    res.render("profile.pug" , {user:req.user});
 }
 module.exports.getHomePage = getHomePage;
 module.exports.getLoginPage = getLoginPage;

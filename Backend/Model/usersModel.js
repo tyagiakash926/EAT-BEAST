@@ -38,6 +38,10 @@ mongoose.connect(
         enum:["admin","user","delivery boy","restaurant owner"],
         default:"user"
     },
+    pImage:{
+      type:String,
+      default:"/images/users/default.png"
+    },
     pwToken:String,
     tokenTime:String
 })
