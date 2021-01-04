@@ -8,6 +8,7 @@ const viewRouter = require("./Router/viewRouter");
 
 const app = express();
 const cookieParser = require("cookie-parser"); 
+const bookingRouter = require("./Router/bookingRouter");
 app.use(cookieParser());
 // it tracks incoming request and see if there is data in the request => the data will be fed in req.body
 app.use(express.json());
@@ -16,7 +17,7 @@ app.set("view engine" , "pug");
 app.set("views", path.join(__dirname,"view"));
 
 
-
+app.use("/api/booking" , bookingRouter);
 app.use("/api/plans" , planRouter);
 app.use("/api/users" , userRouter);
 app.use("" , viewRouter);

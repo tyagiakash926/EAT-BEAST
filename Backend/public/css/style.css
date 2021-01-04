@@ -10,6 +10,26 @@
     font-family: Montserrat , sans-serif;
     
 }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(88, 84, 84); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
 .showcase{
     animation: gbColor infinite 15s;
     
@@ -761,7 +781,7 @@ footer a {
     align-items: center;
     /* display: flex; */
     justify-content: space-evenly;
-    background: #7e968a;
+    background: #19191a;
     /* margin-top: 5%; */
 }
 
@@ -911,7 +931,7 @@ input[type=checkbox]:checked + label {
 
 .last-section{
     height: 30vh;
-    background: #798f96;
+    background: #2f3030;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -934,13 +954,13 @@ input[type=checkbox]:checked + label {
 .about-us{
     font-weight: 100;
     font-size: 16px;
-    
+    color: white;
 }
 .ios-app{
-
+    color: white;
 }
 .android-app{
-
+    color: white;
 }
 .links-icons{
     width: 50%;
@@ -968,8 +988,8 @@ input[type=checkbox]:checked + label {
 
 }
 .lower-sec h4{
-    font-size: 30px;
-    color: rgb(90, 86, 86);
+    font-size: 16px;
+    color: rgb(177, 175, 175);
     font-weight: 100;
 }
 

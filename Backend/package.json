@@ -20,6 +20,7 @@
     "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^2.0.6",
     "path": "^0.12.7",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "stripe": "^8.129.0"
   }
 }
