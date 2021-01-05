@@ -9,8 +9,28 @@
     margin: opx;
     padding: 0px;
 }
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#735BF3; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
 .landing-page{
-    height: 138vh;
+    height: 130vh;
     width: 100%;
     background: #FEC921;
 }
@@ -22,6 +42,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 2;
 }
 .header-nav-bar-icon{
     margin-left: 5%;
@@ -35,7 +57,7 @@
     list-style: none;
     width: 50%;
     justify-content: space-around;
-    margin-top: 5px;
+    margin-top: 15px;
     
 }
 
@@ -77,6 +99,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 4%;
 }
 .landing-page-written-content-title{
     margin-top: 10%;
@@ -108,6 +131,7 @@
 .landing-page-image-content{
     height: 100%;
     width: 50%;
+    margin-top: 4%;
 }
 .landing-page-image-content img{
     height: 100%;
@@ -335,24 +359,6 @@
     font-weight: bold;
     font-family: 'Raleway',sans-serif;
 }
-.chef-section{
-
-}
-.chef-image{
-
-}
-.chef-image img{
-
-}
-.chef-heading{
-
-}
-.chef-heading h1{
-
-}
-.chef-heading p{
-
-}
 
 .discount-template{
     margin-top: -1%;
@@ -520,9 +526,76 @@
 
 }
 .lower-section-feature-plan-icons-chote{
-    height: 100%;
-    width: 8%;
+    height: 135%;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.last-section{
+    height: 30vh;
+    background: rgb(19, 18, 18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.upper-sec{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    font-size: 35px;
+}
+.download-store{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 35px;
+    width: 50%;
+
+}
+.about-us{
+    font-weight: 100;
+    font-size: 16px;
+    color: #FEC921;
+    font-family: 'Montserrat',sans-serif;
+}
+.ios-app{
+    color: #FEC921;
+}
+.android-app{
+    color: #FEC921;
+}
+.links-icons{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.fa-facebook{
+    color: #2954cc;
+}
+.fa-twitter-square{
+    color: #468ae2;
+}
+.fa-instagram{
+    color: #e43aa3;
+}
+.fa-snapchat-square{
+    color: rgb(222, 235, 43);
+
+}
+
+.links-icons a{
+
+}
+.lower-sec{
+
+}
+.lower-sec h4{
+    font-size: 16px;
+    color:#FEC921;
+    font-weight: 100;
+    font-family: 'Poppins',sans-serif;
 }
