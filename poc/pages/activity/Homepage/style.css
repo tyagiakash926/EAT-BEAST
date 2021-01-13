@@ -269,6 +269,10 @@
     align-items: center;
     /* display: flex; */
     justify-content: space-evenly;
+    /* background-image: url('./Untitled\ design.png'); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
 }
 .features-heading{
     width: 50%;

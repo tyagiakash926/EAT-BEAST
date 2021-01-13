@@ -1,6 +1,12 @@
 extends base.pug
 block content
- .plans
-  .plans-templates
-   each plan in plans
-    include planCard.pug
+block header
+  include homepageheader.pug
+  each plan in plans
+   if(plan.duration==2)
+    include planCard2.pug
+   else 
+    include plancard1.pug
+append scripts
+ script(src="https://js.stripe.com/v3/")
+ script(src="js/buyplan.js")

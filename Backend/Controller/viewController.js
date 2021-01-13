@@ -29,7 +29,7 @@ function getResetPasswordPage(req,res){
 function getProfilePage(req,res){
     console.log("getProfile page" , req.name);
     console.log("getProfile page" , req.user)
-    res.render("profile.pug" , {user:req.user});
+    res.render("profile.pug" , {user:req.user,name:req.name});
 }
 module.exports.getHomePage = getHomePage;
 module.exports.getLoginPage = getLoginPage;

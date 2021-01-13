@@ -1,0 +1,19 @@
+.plan-describe-page
+  .plan-describe-page-detail-image
+    .plan-describe-page-detail
+      .plan-describe-page-detail-heading
+        h2 #{plan.name}
+        h1 With specail sauces
+      .plan-describe-page-detail-subheading
+        p
+          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae odio voluptate earum asdf asd hhhhh sdhjsdjs dbsjbjs
+      .plan-describe-page-detail-button
+        .plan-describe-page-detail-price
+          | $#{plan.price}
+        .plan-describe-page-detail-buyme(planId=`${plan["_id"]}`)
+          i.fa.fa-shopping-cart(aria-hidden='true')
+          |                         Buy Now
+      .plan-describe-page-review-button
+        | What's best for u
+    .plan-describe-page-image
+      img(src=`${plan["planImage"]}`)

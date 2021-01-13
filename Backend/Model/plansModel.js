@@ -28,7 +28,11 @@ mongoose.connect(
             },
             message:"discount is more than price!!"
         }
-      }
+      },
+      planImage:{
+        type:String,
+        default:"/images/plans/default.png"
+      },
   })
 
   const planModel = mongoose.model("planscollection",planSchema);

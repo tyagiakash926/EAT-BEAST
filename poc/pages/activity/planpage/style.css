@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap'); /* for chats */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); /* for names  font-family: 'Montserrat', sans-serif;  */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Redressed&family=Yellowtail&display=swap');
+*{
+    box-sizing: border-box;
+    margin: opx;
+    padding: 0px;
+}
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#735BF3; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+.plan-describe-page{
+    height: 100vh;
+    width: 100%;
+    background-image: url("./Untitleddesign1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.plan-describe-page-detail-image{
+  height: 80vh;
+  width: 100%;
+  display: flex;
+}
+.plan-describe-page-detail{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 7%;
+}
+.plan-describe-page-detail-heading{
+
+}
+.plan-describe-page-detail-heading h1{
+  font-family: 'Montserrat',sans-serif;
+  color: #010101;
+  text-align: left;
+  font-size: 45px;
+  line-height: 30px;
+  
+}
+.plan-describe-page-detail-heading h2{
+  font-family: 'Montserrat',sans-serif;
+  color: #494949;
+  text-align: left;
+  font-size: 40px;
+  line-height: 0px;
+}
+
+
+.plan-describe-page-detail-subheading{
+  width: 75%;
+} 
+.plan-describe-page-detail-subheading p{
+  font-family: 'Montserrat',sans-serif;
+  color: #494949;
+  text-align: left;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: small;
+}
+.plan-describe-page-detail-button{
+  display: flex;
+  width: 50%;
+  height: 10%;
+  justify-content: space-around;
+}
+.plan-describe-page-detail-price{
+  font-family: 'Anton',sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+}
+
+.plan-describe-page-detail-buyme{
+  width: 45%;
+  align-items: center;
+  font-family: 'Poppins',sans-serif;
+  color: #CBCBCB;
+  background-color: #010101;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.6s;
+  font-weight: bolder;
+  font-size: 18px;
+}
+.plan-describe-page-detail-buyme:hover{
+  transform: scale(0.95);
+  background: #FEC921;
+  color: black;
+}
+.plan-describe-page-detail-buyme i{
+  height: 50%;
+  width: 17%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FDE283;
+  border-radius: 50%;
+}
+.plan-describe-page-image{
+  width: 50%;
+ margin-top: 5%;
+  height: 100%;
+}
+.plan-describe-page-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.plan-describe-page-review-button{
+  margin-top: 5%;
+    width: 50%;
+    height: 10%;
+    align-items: center;
+    font-family: 'Poppins',sans-serif;
+    color: #CBCBCB;
+    background-color: #010101;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.6s;
+    font-weight: bolder;
+    font-size: 18px;
+}
+.plan-describe-page-review-button:hover{
+  transform: scale(0.95);
+  background: #FEC921;
+  color: black;
+}
