@@ -29,6 +29,17 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
   }
+
+  #preloader{
+      height: 100vh;
+      width: 100%;
+      background: white;
+      position: fixed;
+      background-image: url('./Bean\ Eater-0.8s-203px.gif');
+      z-index: 9999;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
 .landing-page{
     height: 130vh;
     width: 100%;
@@ -337,6 +348,8 @@
     border-radius: 50%;
 }
 
+
+
 .features-templates-info-icon img{
 
 }
@@ -418,6 +431,15 @@
     transform: scale(1.1);
     background-color: #ffffff;
     color: #34495e; 
+}
+
+#upper-svg{
+    transition: all 0.6s;
+}
+
+#upper-svg:hover{
+    transform: translateY(30px);
+    
 }
 
 .featured-plan{

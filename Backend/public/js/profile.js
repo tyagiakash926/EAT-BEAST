@@ -4,6 +4,9 @@ let container_profile_info = document.querySelector(".container-profile-info");
   
 const profileImage = document.querySelector("#imgUpload");
 
+function myfunction(){
+    preloader.style.display="none";
+  }
 
 profileImage.addEventListener("change" , async function(e){
     e.preventDefault();
@@ -24,3 +27,4 @@ edit_profile_info_btn.addEventListener("click",function(){
 edit_profile_cancel_btn.addEventListener("click",function(){
     container_profile_info.classList.remove("side-aa");
 })
+

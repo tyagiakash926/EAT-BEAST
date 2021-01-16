@@ -1,12 +1,4 @@
-let images=["../images/—Pngtree—a plate of caviar sushi_4679504.png" ,"../images/food-13619.png","../images/food-13559.png","../images/—Pngtree—flying cup of coffee with_5057949.png","../images/—Pngtree—mini macarons or macaroons with_3693073.png"]
-let image_changer = document.querySelector(".img-changer");
-window.setInterval(function(){
-    let number = Math.floor(Math.random()*images.length);
-    console.log(number)
-    image_changer.setAttribute("src",images[number]);
-  }, 2000);
-
-  let names = ["Everyone" , "Develpoers" , "Fit Freaks" , "Vegans"];            
+let names = ["Everyone" , "Develpoers" , "Fit Freaks" , "Vegans"];            
 
 let changingText = document.querySelector("#changingtext");
 let idx = 0;
@@ -34,6 +26,10 @@ window.addEventListener("load" , function(){
     setTimeout(typeWords ,  text.length == word.length ? 1000 : 100);
 }
 })
+
+function myfunction(){
+  preloader.style.display="none";
+}
 
   
 

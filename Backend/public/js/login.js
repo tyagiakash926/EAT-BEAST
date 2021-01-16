@@ -52,3 +52,7 @@ createAccBtn.addEventListener("click",async function(e){
     }
 })
 
+
+function myfunction(){
+    preloader.style.display="none";
+  }
