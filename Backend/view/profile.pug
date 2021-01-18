@@ -24,12 +24,12 @@ block content
       #profile-edit-save-btn.save-btn Save
       #profile-edit-cancel-btn.cancel Cancel
  if(user.reviewPlans)
-  each review in user.reviewPlans
    .my-review-section
      .my-review-section-heading
        h1 Want to edit your review!!
      .my-review-section-container-all-review
-      include onereview.pug
+      each review in user.reviewPlans
+       include onereview.pug
  else
   span
 block scripts

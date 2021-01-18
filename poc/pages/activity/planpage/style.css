@@ -81,6 +81,11 @@
   transition: 0.7s;
 }
 
+.plan-describe-page-plus-review-page{
+  height: 100vh;
+    min-width: 100%;
+}
+
 .indicators {
   position : absolute;
   left     : 50%;
@@ -232,4 +237,127 @@
   transform: scale(0.95);
   background: #FEC921;
   color: black;
+}
+.plan-no-see{
+  display: none;
+}
+.plans-describe-section-with-review{
+  height: 100vh;
+  background: url('./Live-Wave-Background.svg');
+  display: flex;
+}
+.plans-describe-section-with-review-1{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plans-describe-section-with-review-1 img{
+  height: 80%;
+  width: 80%;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plans-describe-section-with-review-2{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#my-review-rating{
+  display: flex;
+}
+.rating-number{
+border: 2px solid white;
+margin: 3px;
+height: 30px;
+width: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+border-radius: 50%;
+color: white;
+
+}
+.rating-number:hover{
+  transition: all 0.5s;
+  transform: scale(1.2);
+  background-color: white;
+  color: black;
+}
+.rating-heading-number{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: -33%; */
+  margin: 10px;
+  font-family: 'Anton',sans-serif;
+font-size: 16px;
+}
+.my-review-message{
+  height: 21%;
+  width: 65%;
+
+  font-family: 'Anton',sans-serif;
+  font-size: 16px;
+}
+#my-review-message{
+  font-family: 'Poppins';
+  width: 80%;
+  height: 40%;
+  outline: none;
+  border: none;
+  font-size: 19px;
+  color: #41e822;
+  font-weight: bold;
+}
+.my-review-section-submit{
+  height: 5%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Anton';
+}
+.my-review-section-submit:hover{
+  transition: all 0.6s;
+  transform: scale(0.85);
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+.my-review-section-cancel{
+  height: 5%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Anton';
+}
+.my-review-section-cancel:hover{
+  transition: all 0.6s;
+  transform: scale(0.85);
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+.all-review-from-plans{
+  height: 100vh;
+  width: 100%;
 }

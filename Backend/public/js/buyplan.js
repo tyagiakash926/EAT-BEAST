@@ -97,3 +97,4 @@ window.addEventListener("load" , function(){
     setTimeout(typeWords ,  text.length == word.length ? 1000 : 100);
 }
 })
+

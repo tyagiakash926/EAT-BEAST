@@ -168,3 +168,68 @@ for(let i=0 ; i<buyPlansButtons2.length ; i++){
         }
     })
 }
+
+let want_to_rate_us_Buttons = document.querySelectorAll(".plan-describe-page-review-button");
+let reviewSubmitButton = document.querySelectorAll(".my-review-section-submit");
+let rating_input =document.querySelectorAll("#my-review-rating")
+let rating_message =document.querySelectorAll("#my-review-message")
+
+
+for(let i=0;i<want_to_rate_us_Buttons.length;i++){
+    want_to_rate_us_Buttons[i].addEventListener("click",function(){
+        // console.log("hii");
+        if(allLis.length < 6){
+            window.location.href = "/login";
+        }
+        want_to_rate_us_Buttons[i].parentElement.parentElement.parentElement.classList.add("plan-no-see")
+        want_to_rate_us_Buttons[i].parentElement.parentElement.parentElement.parentElement.lastElementChild.classList.remove("plan-no-see");
+        document.querySelectorAll(".my-review-section-cancel")[i*2].addEventListener("click",function(){
+            want_to_rate_us_Buttons[i].parentElement.parentElement.parentElement.parentElement.lastElementChild.classList.add("plan-no-see");
+            want_to_rate_us_Buttons[i].parentElement.parentElement.parentElement.classList.remove("plan-no-see")
+        })
+
+        reviewSubmitButton[i*2].addEventListener("click",async function(){
+            if(rating_input[i*2].value && rating_message[i*2].value){
+                let message = rating_message[i*2].value;
+                let rating = rating_input[i*2].value;
+                let planId = document.querySelectorAll(".plans-describe-section-with-review-1")[i*2].firstElementChild.getAttribute("src");
+                let obj = await axios.post("http://localhost:3000/api/review",{message:message,planId:planId,rating:rating});
+                console.log(obj);
+                rating_message[i*2].value ="";
+                rating_input[i*2].value = "";
+                window.location.href = "/reviews";
+            }
+        })
+    })
+}
+
+let want_to_rate_us_Buttons1 = document.querySelectorAll(".featured-plan-1-1-want-to-buy");
+
+for(let i=0;i<want_to_rate_us_Buttons1.length;i++){
+    want_to_rate_us_Buttons1[i].addEventListener("click",function(){
+        // console.log("hii");
+        if(allLis.length < 6){
+            window.location.href = "/login";
+        }
+        want_to_rate_us_Buttons1[i].parentElement.parentElement.parentElement.parentElement.classList.add("plan-no-see");
+        want_to_rate_us_Buttons1[i].parentElement.parentElement.parentElement.parentElement.parentElement.lastElementChild.classList.remove("plan-no-see");
+        document.querySelectorAll(".my-review-section-cancel")[(i*2) + 1].addEventListener("click",function(){
+            want_to_rate_us_Buttons1[i].parentElement.parentElement.parentElement.parentElement.classList.remove("plan-no-see");
+            want_to_rate_us_Buttons1[i].parentElement.parentElement.parentElement.parentElement.parentElement.lastElementChild.classList.add("plan-no-see");
+        })
+
+        reviewSubmitButton[(i*2) + 1].addEventListener("click",async function(){
+            if(rating_input[(i*2)+1].value && rating_message[(i*2)+1].value){
+                let message = rating_message[(i*2) + 1].value;
+                let rating = rating_input[(i*2) + 1].value;
+                let planId = document.querySelectorAll(".plans-describe-section-with-review-1")[(i*2) + 1].firstElementChild.getAttribute("src");
+                let obj = await axios.post("http://localhost:3000/api/review",{message:message,planId:planId,rating:rating});
+                console.log(obj);
+                rating_message[(i*2) + 1].value ="";
+                rating_input[(i*2) + 1].value = "";
+                window.location.href = "/reviews";
+            }
+        })
+    })
+}
+
