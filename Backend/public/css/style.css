@@ -465,6 +465,7 @@
 .featured-plan{
     height: 100vh;
     /* background-image: linear-gradient(to right, #ffffff 0% , #D4D9D9 100%); */
+    min-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -543,7 +544,26 @@
 .featured-plan-1-1-price-buynow:hover{
     transform: scale(1.2);
     background:#735BF3;
-}   
+} 
+.featured-plan-1-1-want-to-buy{
+    height: 40px;
+    width: 100%;
+    border: 3px solid white;
+    display: flex;
+    background: black;
+    color: #FEC921;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 25px;
+    font-family: 'Spartan',sans-serif;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.featured-plan-1-1-want-to-buy:hover{
+    transform: scale(1.2);
+    background:#735BF3;
+}  
 .featured-plan-1-2{
     height: 100%;
     width: 50%;
@@ -559,12 +579,6 @@
     height: 80%;
     width: 80%;
     object-fit: contain;
-    transition: all 2s;
-    transform: none;
-}
-.featured-plan-1-2 img:hover{
-    transition: all 2s;
-    transform: rotate(360deg);
 }
 .featured-plan-2{
     height: 10%;
@@ -1692,145 +1706,7 @@ justify-content: center;
     cursor: pointer;
 }
 
-.plan-describe-page{
-    height: 100vh;
-    width: 100%;
-    background-image: url("/images/Untitleddesign1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.plan-describe-page-detail-image{
-  height: 80vh;
-  width: 100%;
-  display: flex;
-}
-.plan-describe-page-detail{
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: 7%;
-}
-.plan-describe-page-detail-heading{
 
-}
-.plan-describe-page-detail-heading h1{
-  font-family: 'Montserrat',sans-serif;
-  color: #010101;
-  text-align: left;
-  font-size: 45px;
-  line-height: 30px;
-  
-}
-.plan-describe-page-detail-heading h2{
-  font-family: 'Montserrat',sans-serif;
-  color: #494949;
-  text-align: left;
-  font-size: 40px;
-  line-height: 0px;
-}
-
-
-.plan-describe-page-detail-subheading{
-  width: 75%;
-} 
-.plan-describe-page-detail-subheading p{
-  font-family: 'Montserrat',sans-serif;
-  color: #494949;
-  text-align: left;
-  font-size: 16px;
-  line-height: normal;
-  font-weight: small;
-}
-.plan-describe-page-detail-button{
-  display: flex;
-  width: 50%;
-  height: 10%;
-  justify-content: space-around;
-}
-.plan-describe-page-detail-price{
-  font-family: 'Anton',sans-serif;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  font-size: 40px;
-}
-
-.plan-describe-page-detail-buyme{
-  width: 45%;
-  align-items: center;
-  font-family: 'Poppins',sans-serif;
-  color: #CBCBCB;
-  background-color: #010101;
-  border-radius: 25px;
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.6s;
-  font-weight: bolder;
-  font-size: 18px;
-}
-.plan-describe-page-detail-buyme:hover{
-  transform: scale(0.95);
-  background: #FEC921;
-  color: black;
-}
-.plan-describe-page-detail-buyme i{
-  height: 50%;
-  width: 17%;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #FDE283;
-  border-radius: 50%;
-  margin-left: -1%;
-}
-.plan-describe-page-image{
-  width: 50%;
- margin-top: 5%;
-  height: 100%;
-}
-.plan-describe-page-image img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: all 0.6s;
-  transform: none;
-}
-.plan-describe-page-image img:hover{
-    transition: all 0.6s;
-    transform: rotate3d(3, 3, 0, 36deg);
-}
-.plan-describe-page-review-button{
-  margin-top: 5%;
-    width: 50%;
-    height: 10%;
-    align-items: center;
-    font-family: 'Poppins',sans-serif;
-    color: #CBCBCB;
-    background-color: #010101;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.6s;
-    font-weight: bolder;
-    font-size: 18px;
-}
-.plan-describe-page-review-button:hover{
-  transform: scale(0.95);
-  background: #FEC921;
-  color: black;
-}
 
 
 .main-container{
@@ -1883,6 +1759,7 @@ justify-content: center;
   color: grey;
   font-weight: bold;
   border-radius: 20px;
+  font-family: 'Redressed',cursive;
   display: flex;
 }
 .dashboard-section-div-1-button-icon{
@@ -1896,7 +1773,7 @@ justify-content: center;
   border-radius: 20px;
 }
 .dashboard-section-div-1-button:hover{
-  background-color: #F87193;
+    background-color: #f5b2c2;
   color: white;
   cursor: pointer;
 }
@@ -1915,7 +1792,7 @@ justify-content: center;
   height: 25%;
   width: 100%;
   margin-top: 30%;
-  background-color: white;
+  background-color: #e1d3f2;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1941,13 +1818,13 @@ justify-content: center;
 }
 .dashboard-section-div-2-heading h1{
   font-size:20px;
-  font-family: 'Poppins',sans-serif;
-
+  font-family: 'Redressed',cursive;
+  line-height: 1px;
 }
 .dashboard-section-div-2-heading h2{
-  
+    line-height: 3px;
   font-size:13px;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Redressed',cursive;
 
 }
 
@@ -1981,16 +1858,16 @@ justify-content: center;
   height: 100%;
 }
 .plans-section-1-heading h1{
-  font-family: 'Poppins',sans-serif;
-  font-family: 'Poppins',sans-serif;
-  line-height: 1;
-  letter-spacing: 2px;
+    font-family: 'Anton',sans-serif;
+    font-size: 154%;
+    margin: 5px;
+    font-weight: 400;
 }
 .plans-section-1-heading span{
-  font-family: 'Poppins',sans-serif;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Redressed',cursive;
   /* margin-top: -5%; */
   font-size: 50px;
+  color: #d0a7e4;
 
 }
 .plans-section-1-heading img{
@@ -2033,12 +1910,17 @@ justify-content: center;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Redressed',cursive;
 }
+.plans-section-1-2-heading-plans:hover{
+    background-color: #c7e4f0;
+    cursor: pointer;
+  }
 .plans-section-1-2-heading-plans img{
-  object-fit: contain;
-  height: 80%;
-  width: 70%;
+    object-fit: contain;
+    height: 45%;
+    width: 70%;
+    margin-top: 26%;
 }
 /* .active{
   background-color:#c8d8e9;
@@ -2056,7 +1938,7 @@ justify-content: center;
 }
 .plans-section-1-2-discount h1{
   color: white;
-  font-family: "Poppins",sans-serif;
+  font-family: 'Redressed',cursive;
   font-size: 20px;
   margin-top: 30%;
 }
@@ -2149,11 +2031,11 @@ justify-content: center;
 }
 .plans-section-2-plans-plan-no-1-heading h2{
   font-size: 16px;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Redressed',cursive;
   line-height: 8px;
 }
 .plans-section-2-plans-plan-no-1-heading p{
-  font-family: monospace;
+    font-family: 'Redressed',cursive;
   width: 83%;
   height: 70%;
   text-align: left;
@@ -2188,3 +2070,171 @@ justify-content: center;
   background-color: #30334F;
   font-family: 'Poppins',sans-serif;
 }
+
+
+.slider-box {
+    width     : 100%;
+    max-height: 100vh;
+    position  : relative;
+    overflow  : hidden;
+  }
+  
+  .plan-corosel{
+    width     : 100%;
+    display   : inline-flex;
+    transition: 0.7s;
+  }
+  
+  .indicators {
+    position : absolute;
+    left     : 50%;
+    bottom   : 20px;
+    transform: translateX(-50%);
+  }
+  
+  .indicators span {
+    display      : inline-block;
+    width        : 15px;
+    height       : 15px;
+    border-radius: 50%;
+    background-color: #FEC921;
+    cursor       : pointer;
+    margin: 10px;
+  }
+  
+   .corosel-active {
+    transform: scale(2);
+  }  
+  
+  .plan-describe-page{
+      height: 100vh;
+      min-width: 100%;
+      background-image: url("/images/Untitleddesign1.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  .plan-describe-page-detail-image{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+  }
+  .plan-describe-page-detail{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 7%;
+  }
+  .plan-describe-page-detail-heading{
+  
+  }
+  .plan-describe-page-detail-heading h1{
+    font-family: 'Montserrat',sans-serif;
+    color: #010101;
+    text-align: left;
+    font-size: 45px;
+    line-height: 30px;
+    
+  }
+  .plan-describe-page-detail-heading h2{
+    font-family: 'Montserrat',sans-serif;
+    color: #494949;
+    text-align: left;
+    font-size: 40px;
+    line-height: 0px;
+  }
+  
+  
+  .plan-describe-page-detail-subheading{
+    width: 75%;
+  } 
+  .plan-describe-page-detail-subheading p{
+    font-family: 'Redressed',cursive;
+    color: #494949;
+    text-align: left;
+    font-size: 16px;
+    line-height: normal;
+    font-weight: small;
+  }
+  .plan-describe-page-detail-button{
+    display: flex;
+    width: 50%;
+    height: 10%;
+    justify-content: space-around;
+  }
+  .plan-describe-page-detail-price{
+    font-family: 'Redressed',cursive;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .plan-describe-page-detail-buyme{
+    width: 45%;
+    align-items: center;
+    font-family: 'Redressed',cursive;
+    color: #CBCBCB;
+    background-color: #010101;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.6s;
+    font-weight: bolder;
+    font-size: 18px;
+  }
+  .plan-describe-page-detail-buyme:hover{
+    transform: scale(0.95);
+    background: #FEC921;
+    color: black;
+  }
+  .plan-describe-page-detail-buyme i{
+    height: 61%;
+    width: 21%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FDE283;
+    border-radius: 50%;
+  }
+  .plan-describe-page-image{
+    width: 50%;
+   margin-top: 5%;
+    height: 100%;
+  }
+  .plan-describe-page-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .plan-describe-page-review-button{
+    margin-top: 5%;
+      width: 50%;
+      height: 10%;
+      align-items: center;
+      font-family: 'Redressed',cursive;
+      color: #CBCBCB;
+      background-color: #010101;
+      border-radius: 25px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.6s;
+      font-weight: bolder;
+      font-size: 18px;
+  }
+  .plan-describe-page-review-button:hover{
+    transform: scale(0.95);
+    background: #FEC921;
+    color: black;
+  }

@@ -7,6 +7,24 @@ mongoose.connect(
     console.log("connected to db!!!");
   });
 
+  const reviewObjSchema = new mongoose.Schema({
+    planId : {
+        type:String,
+        required:true
+    },
+    message : {
+        type:String,
+        required:true
+    },
+    rating : {
+      type:Number
+    },
+    bookedOn : {
+        type:String,
+        default:new Date()
+    }
+})
+
   let userSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -42,8 +60,11 @@ mongoose.connect(
       type:String,
       default:"/images/users/default.png"
     },
+    reviewPlans:{
+      type:[reviewObjSchema],
+    },
     pwToken:String,
-    tokenTime:String
+    tokenTime:String,
 })
 //it will called before create 
 userSchema.pre("save" , function(){

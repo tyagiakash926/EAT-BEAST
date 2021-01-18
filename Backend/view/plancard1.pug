@@ -1,22 +1,3 @@
-//- .plans-templates-info
-//-   .plans-templates-info-icon
-//-     i.fas.fa-coins(aria-hidden='true')
-//-   .plans-templates-info-content
-//-     h1 #{plan.name}
-//-     h2 #{plan.price}$/#{plan.duration}M
-//-     p
-//-       i.fa.fa-check-circle(aria-hidden='true')
-//-       | 44 Pizza 
-//-       i.fas.fa-pizza-slice(aria-hidden='true')
-//-     p
-//-       i.fa.fa-check-circle(aria-hidden='true')
-//-       | 1 Thali As ur Taste 
-//-       i.fas.fa-utensil-spoon(aria-hidden='true')
-//-     p
-//-       i.fa.fa-check-circle(aria-hidden='true')
-//-       | 1 times Snacks And Cold Drinks 
-//-       i.fas.fa-hamburger(aria-hidden='true')
-//-     .plans-button(planId=`${plan["_id"]}`) I'm Hungry
 .featured-plan
    .featured-plan-1
      .featured-plan-1-1
@@ -36,10 +17,11 @@
          .featured-plan-1-1-price
            .featured-plan-1-1-price-heading $#{plan.price}
            .featured-plan-1-1-price-buynow(planId=`${plan["_id"]}`) order now
+         .featured-plan-1-1-want-to-buy Want to rate us!  
      .featured-plan-1-2
        img(src=`${plan["planImage"]}`)
    .featured-plan-2
      .lower-section-feature-plan-icons-chote
-       i.fas.fa-less-than
+       
      .lower-section-feature-plan-icons-chote
-       i.fas.fa-greater-than
+       

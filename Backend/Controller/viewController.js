@@ -31,9 +31,22 @@ function getProfilePage(req,res){
     console.log("getProfile page" , req.user)
     res.render("profile.pug" , {user:req.user,name:req.name});
 }
+async function getReviewPage(req,res){
+    try{
+        let plans = await planModel.find();
+        // console.log(plans);
+        res.render("reviewpage.pug" ,{name:req.name , plans:plans});
+    }
+    catch(error){
+        console.log(error);
+    } 
+}
+
+
 module.exports.getHomePage = getHomePage;
 module.exports.getLoginPage = getLoginPage;
 module.exports.getPlansPage = getPlansPage;
 module.exports.getForgetPasswordPage = getForgetPasswordPage;
 module.exports.getResetPasswordPage = getResetPasswordPage;
 module.exports.getProfilePage = getProfilePage;
+module.exports.getReviewPage= getReviewPage;

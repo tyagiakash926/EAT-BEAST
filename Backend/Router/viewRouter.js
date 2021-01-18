@@ -1,9 +1,10 @@
 const express = require("express");
 const { isLoggedIn ,logout } = require("../Controller/authController");
-const { getDemoPage, getHomePage, getLoginPage, getPlansPage ,getForgetPasswordPage, getResetPasswordPage ,getProfilePage} = require("../Controller/viewController");
+const { getDemoPage, getHomePage, getLoginPage, getPlansPage ,getForgetPasswordPage,getReviewPage, getResetPasswordPage ,getProfilePage} = require("../Controller/viewController");
 const viewRouter = express.Router();
 viewRouter.use(isLoggedIn);
 viewRouter.route("").get(getHomePage);
+viewRouter.route("/reviews").get(getReviewPage);
 viewRouter.route("/logout").get(logout);
 viewRouter.route("/login").get(getLoginPage);
 viewRouter.route("/plans").get(getPlansPage);
