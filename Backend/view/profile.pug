@@ -16,12 +16,21 @@ block content
         .profile-image-name-n #{user.name}
         .edit-profile-info Edit
   .container-profile-info
-    input#name-edit-profile(type='name' placeholder='Name')
-    input#email-edit-profile(type='email' placeholder='Email')
-    input#pw-edit-profile(type='password' placeholder='Password')
-    input#cpw-edit-profile(type='password' placeholder='Confirm Password')
+    input#name-edit-profile(type='name' placeholder='Name' value=`${user["name"]}`)
+    input#email-edit-profile(type='email' placeholder='Email' value=`${user["email"]}`)
+    input#pw-edit-profile(type='password' placeholder='Password' value=`${user["password"]}`)
+    input#cpw-edit-profile(type='password' placeholder='Confirm Password' value=`${user["confirmPassword"]}`)
     .save-and-cancel-btn
       #profile-edit-save-btn.save-btn Save
       #profile-edit-cancel-btn.cancel Cancel
+ if(user.reviewPlans)
+  each review in user.reviewPlans
+   .my-review-section
+     .my-review-section-heading
+       h1 Want to edit your review!!
+     .my-review-section-container-all-review
+      include onereview.pug
+ else
+  span
 block scripts
  script(src="./js/profile.js") 

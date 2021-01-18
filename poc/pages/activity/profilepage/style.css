@@ -8,7 +8,7 @@
     padding: 0px;
 }
 .profile-background-container{
-    background-image:url('./bg2.png');
+    background-image:url('./bg1.jpg');
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -179,4 +179,111 @@
     transition: transform 0.6s;
     transform: scale(0.95);
     cursor: pointer;
+}
+.my-review-section{
+    height: 80vh;
+    width: 100%;
+
+}
+.my-review-section-heading{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Spartan';
+}
+.my-review-section-heading h1{
+   
+}
+.my-review-section-container-all-review{
+    height: 75%;
+    width: 100%;
+    background-color: #E2F75A;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
+    overflow: scroll;
+}
+.my-review-section-container-1-review{
+    height: 100%;
+    width: 23%;
+    background-color: aqua;
+    margin: 1%;
+}
+.my-review-section-container-1-review-image{
+    height: 50%;
+    width: 100%;
+}
+.my-review-section-container-1-review-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.my-review-section-container-1-review-edit{
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.my-review-section-container-1-review-edit-button{
+    height: 20%;
+    width: 70%;
+    border: 1px solid;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    background: black;
+}
+.my-review-section-container-1-review-edit-button:hover{
+    transition: all 0.5s;
+    transform: scale(0.9);
+    background-color: #E2F75A;
+}
+.my-review-section-container-1-review-edit-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#review-message{
+    outline: none;
+    border: none;
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+.my-review-section-container-1-review-edit-content-save-cancel{
+    display: flex;
+    height: 30%;
+    justify-content: space-evenly;
+}
+.my-review-section-container-1-review-edit-content-save{
+    height: 64%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+    border: 1px solid;
+    border-radius: 30px;
+}
+.my-review-section-container-1-review-edit-content-cancel{
+    height: 64%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+    border: 1px solid;
+    border-radius: 30px;
+}
+.hide{
+    display: none;
 }

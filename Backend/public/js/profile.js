@@ -28,3 +28,16 @@ edit_profile_cancel_btn.addEventListener("click",function(){
     container_profile_info.classList.remove("side-aa");
 })
 
+
+let review_edit_button = document.querySelectorAll(".my-review-section-container-1-review-edit-button");
+for(let i=0;i<review_edit_button.length;i++){
+    review_edit_button[i].addEventListener("click",function(){
+        review_edit_button[i].classList.add("textarea-no-see");
+        document.querySelectorAll(".my-review-section-container-1-review-edit-button")[i].nextElementSibling.classList.remove("textarea-no-see")
+        document.querySelectorAll(".my-review-section-container-1-review-edit-button")[i].nextElementSibling.lastElementChild.lastElementChild.addEventListener("click",function(){
+            review_edit_button[i].classList.remove("textarea-no-see");
+        document.querySelectorAll(".my-review-section-container-1-review-edit-button")[i].nextElementSibling.classList.add("textarea-no-see")
+        })
+    })
+}
+ 

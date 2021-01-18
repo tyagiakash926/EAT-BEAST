@@ -27,8 +27,9 @@ function getResetPasswordPage(req,res){
     res.render("resetpassword.pug",{name:req.name});
 }
 function getProfilePage(req,res){
-    console.log("getProfile page" , req.name);
-    console.log("getProfile page" , req.user)
+    // console.log("getProfile page" , req.name);
+    // console.log("getProfile page" , req.user)
+    // console.log(req.user.reviewPlans);
     res.render("profile.pug" , {user:req.user,name:req.name});
 }
 async function getReviewPage(req,res){
