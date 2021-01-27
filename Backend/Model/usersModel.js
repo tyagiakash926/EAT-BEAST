@@ -20,8 +20,7 @@ mongoose.connect(
       type:Number
     },
     bookedOn : {
-        type:String,
-        default:new Date()
+        type:String, // main planid
     }
 })
 

@@ -26,6 +26,6 @@
     .my-review-message
       | Message :
       input#my-review-message(type='text')
-    .my-review-section-submit Submit
+    .my-review-section-submit(planId=`${plan["_id"]}`) Submit
     .my-review-section-cancel cancel
 

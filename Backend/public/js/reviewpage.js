@@ -193,7 +193,8 @@ for(let i=0;i<want_to_rate_us_Buttons.length;i++){
                 let message = rating_message[i*2].value;
                 let rating = rating_input[i*2].value;
                 let planId = document.querySelectorAll(".plans-describe-section-with-review-1")[i*2].firstElementChild.getAttribute("src");
-                let obj = await axios.post("http://localhost:3000/api/review",{message:message,planId:planId,rating:rating});
+                let mainPlanId = document.querySelectorAll(".my-review-section-submit")[i*2].getAttribute("planId");
+                let obj = await axios.post("http://localhost:3000/api/review",{message:message,planId:planId,rating:rating,mainPlanId:mainPlanId});
                 console.log(obj);
                 rating_message[i*2].value ="";
                 rating_input[i*2].value = "";
@@ -223,7 +224,8 @@ for(let i=0;i<want_to_rate_us_Buttons1.length;i++){
                 let message = rating_message[(i*2) + 1].value;
                 let rating = rating_input[(i*2) + 1].value;
                 let planId = document.querySelectorAll(".plans-describe-section-with-review-1")[(i*2) + 1].firstElementChild.getAttribute("src");
-                let obj = await axios.post("http://localhost:3000/api/review",{message:message,planId:planId,rating:rating});
+                let mainPlanId = document.querySelectorAll(".my-review-section-submit")[(i*2) + 1].getAttribute("planId")
+                let obj = await axios.post("http://localhost:3000/api/review",{message:message,planId:planId,rating:rating,mainPlanId:mainPlanId});
                 console.log(obj);
                 rating_message[(i*2) + 1].value ="";
                 rating_input[(i*2) + 1].value = "";

@@ -18,7 +18,7 @@
           .featured-plan-1-1-price
             .featured-plan-1-1-price-heading $#{plan.price}
             .featured-plan-1-1-price-buynow(planId=`${plan["_id"]}`) order now
-          .featured-plan-1-1-want-to-buy Want to rate us!  
+          .featured-plan-1-1-want-to-buy(planId=`${plan["_id"]}`) Want to rate us!  
       .featured-plan-1-2
         img(src=`${plan["planImage"]}`)
     .featured-plan-2
@@ -35,5 +35,5 @@
     .my-review-message
       | Message :
       input#my-review-message(type='text')
-    .my-review-section-submit Submit
+    .my-review-section-submit(planId=`${plan["_id"]}`) Submit
     .my-review-section-cancel cancel       

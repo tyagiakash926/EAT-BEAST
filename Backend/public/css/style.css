@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap'); /* for chats */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); /* for names  font-family: 'Montserrat', sans-serif;  */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Redressed&family=Yellowtail&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800");
 *{
     box-sizing: border-box;
     margin: opx;
@@ -1717,10 +1718,13 @@ justify-content: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Spartan';
+    font-family: 'Poppins';
 }
 .my-review-section-heading h1{
-   
+    font-size: 40px;
+    font-family: 'Redressed';
+    color: turquoise;
+    border-bottom: 3px solid turquoise;
 }
 .my-review-section-container-all-review{
     height: 75%;
@@ -1762,20 +1766,22 @@ justify-content: center;
 }
 .my-review-section-container-1-review-edit-button{
     height: 20%;
-    width: 70%;
-    border: 1px solid;
+    width: 40%;
+    /* border: 1px solid; */
     justify-content: center;
     display: flex;
     align-items: center;
     border-radius: 20px;
     color: white;
-    background: black;
+    background: #19c4ad;
+    font-family: 'Poppins';
 }
 .my-review-section-container-1-review-edit-button:hover{
     transition: all 0.5s;
-    transform: scale(0.9);
-    background-color: #fdfdfd;
-    color: black;
+    transform: scale(1.2);
+    background-color: rgb(83 82 82);
+    color: rgb(255 255 255);
+    cursor: pointer;
 }
 .my-review-section-container-1-review-edit-content{
     height: 100%;
@@ -1786,13 +1792,16 @@ justify-content: center;
 #review-message{
     outline: none;
     border: none;
-    background-color: rgb(58, 58, 58);
-    color: white;
+    font-size: 12px;
+    background-color: #fff200;
+    color: #19c4ad;
+    font-family: 'Montserrat';
 }
 .my-review-section-container-1-review-edit-content-save-cancel{
     display: flex;
     height: 30%;
     justify-content: space-evenly;
+    
 }
 .my-review-section-container-1-review-edit-content-save{
     height: 64%;
@@ -1801,8 +1810,12 @@ justify-content: center;
     align-items: center;
     justify-content: center;
     margin-top: 6%;
-    border: 1px solid;
+    /* border: 1px solid; */
     border-radius: 30px;
+    color: white;
+    background: #19c4ad;
+    cursor: pointer;
+    font-family: 'Poppins';
 }
 .my-review-section-container-1-review-edit-content-cancel{
     height: 64%;
@@ -1811,8 +1824,24 @@ justify-content: center;
     align-items: center;
     justify-content: center;
     margin-top: 6%;
-    border: 1px solid;
+    /* border: 1px solid; */
+    cursor: pointer;
     border-radius: 30px;
+    color: white;
+    background: #19c4ad;
+    font-family: 'Poppins';
+}
+.my-review-section-container-1-review-edit-content-cancel:hover{
+    transition: all 0.5s;
+    transform: scale(1.2);
+    background-color: rgb(83 82 82);
+    color: rgb(255 255 255);
+}
+.my-review-section-container-1-review-edit-content-save:hover{
+    transition: all 0.5s;
+    transform: scale(1.2);
+    background-color: rgb(83 82 82);
+    color: rgb(255 255 255);
 }
 .textarea-no-see{
     display: none;
@@ -2461,3 +2490,147 @@ justify-content: center;
     border: none;
     cursor: pointer;
   }
+
+.container-of-review {
+  font-family: "Open Sans", sans-serif;
+  /* background: #114e9a; */
+}
+
+.page-title {
+  color: white;
+  text-align: center;
+  font-weight: 300;
+}
+
+.nav {
+  display: table;
+  margin: 25px auto;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+}
+.nav li {
+  margin: 0 10px;
+  list-style: none;
+  margin: 0 10px;
+  list-style: none;
+  display: flex;
+  /* height: 81%; */
+  align-items: center;
+  width: 7%;
+  justify-content: center;
+}
+.nav li:hover{
+    background: rgb(253, 239, 37);
+    opacity: 0.8;
+    border-radius: 6px;
+}
+
+.nav li a{
+    text-decoration: none;
+    color: #b99797;
+    cursor: pointer;
+  }
+
+.testimonial-wrap {
+  margin: 10px auto;
+}
+.testimonial-wrap:before, .testimonial-wrap:after {
+  content: "";
+  display: table;
+}
+.testimonial-wrap:after {
+  clear: both;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 2px 0 0 rgba(1, 1, 1, 0.1);
+  position: relative;
+  color: #666;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.testimonial:before, .testimonial:after {
+  position: absolute;
+  visibility: visible;
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+  border-color: transparent;
+  border-bottom: 0;
+}
+.testimonial:before {
+  border-width: 17px;
+  border-top-color: rgba(1, 1, 1, 0.15);
+  bottom: -17px;
+  left: 14px;
+}
+.testimonial:after {
+  border-width: 15px;
+  border-top-color: #fff;
+  bottom: -15px;
+  left: 16px;
+}
+.testimonial strong {
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.testimonial-author {
+  display: block;
+  line-height: 1.2;
+}
+.testimonial-author .name {
+  color: #76b0f5;
+}
+.testimonial-author strong {
+  display: block;
+  font-weight: 600;
+  font-size: 22px;
+  color: white;
+}
+.testimonial-author .name,
+.testimonial-author .stars {
+  display: block;
+  float: left;
+}
+.testimonial-author .stars {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 25px;
+  line-height: 45px;
+  color: #ffbe3e;
+}
+.active1{
+    background: rgb(148, 253, 253);
+    opacity: 0.8;
+    border-radius: 6px;
+}
+.image-plus-name{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-plus-name img{
+    height: 78px;
+    width: 78px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.review-row{
+    display: flex; 
+    flex-wrap: wrap;
+  }
+.review-no-see{
+    display: none;
+}

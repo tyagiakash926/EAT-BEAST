@@ -40,4 +40,19 @@ for(let i=0;i<review_edit_button.length;i++){
         })
     })
 }
- 
+
+let allsavebtn=document.querySelectorAll(".my-review-section-container-1-review-edit-content-save");
+let alleditbtn = document.querySelectorAll(".my-review-section-container-1-review-edit-button");
+let alltextarea = document.querySelectorAll("#review-message");
+let allplanimage = document.querySelectorAll(".my-review-section-container-1-review-image img");
+for(let i=0;i<allsavebtn.length;i++){
+    allsavebtn[i].addEventListener("click",async function(){
+        let reviewId = allsavebtn[i].getAttribute("reviewId");
+        console.log(reviewId);
+        let message =alltextarea[i].value;
+        let mainPlanId = alleditbtn[i].getAttribute("mainplanid");
+        // planModel.find({planImage})
+        let obj = await axios.post(`http://localhost:3000/api/review/${reviewId}` , {message:message,mainPlanId:mainPlanId});
+        window.location.reload();
+    })
+}

@@ -6,6 +6,32 @@ mongoose.connect(
     console.log("connected to db!!!");
   });
 
+  const reviewObjSchemaInPlan = new mongoose.Schema({
+    userId :{
+      type:String,
+      required:true
+    },
+    userImage:{
+      type:String,
+      required:true
+    },
+    userName:{
+      type:String,
+      required:true
+    },
+    message:{
+      type:String,
+      required:true
+    },
+    rating:{
+      type:Number,
+    },
+    bookedOn : {
+      type:String,
+      default:new Date()
+    }
+  })
+
   let planSchema = new mongoose.Schema({
       name:{
           type:String,
@@ -21,13 +47,7 @@ mongoose.connect(
           required:true,
       },
       discount:{
-        type:Number,
-        validate:{
-            validator:function(){
-                return this.discount < this.price;
-            },
-            message:"discount is more than price!!"
-        }
+        type:[reviewObjSchemaInPlan],
       },
       planImage:{
         type:String,
