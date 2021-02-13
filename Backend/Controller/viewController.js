@@ -61,6 +61,10 @@ async function getDetailsPage(req,res){
     } 
 } 
 
+async function getPaymentHistoryPage(req,res){
+    res.render("paymentHistory.pug");
+}
+
 
 module.exports.getHomePage = getHomePage;
 module.exports.getLoginPage = getLoginPage;
@@ -70,3 +74,4 @@ module.exports.getResetPasswordPage = getResetPasswordPage;
 module.exports.getProfilePage = getProfilePage;
 module.exports.getReviewPage= getReviewPage;
 module.exports.getDetailsPage=getDetailsPage;
+module.exports.getPaymentHistoryPage= getPaymentHistoryPage;

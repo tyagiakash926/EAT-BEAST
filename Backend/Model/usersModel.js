@@ -64,6 +64,9 @@ mongoose.connect(
     },
     pwToken:String,
     tokenTime:String,
+    bookedPlanId : {
+      type:String
+    }
 })
 //it will called before create 
 userSchema.pre("save" , function(){

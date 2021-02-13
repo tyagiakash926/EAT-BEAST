@@ -1,6 +1,7 @@
 const stripe = require("stripe");
 const planModel = require("../Model/plansModel");
 const userModel = require("../Model/usersModel");
+const bookingModel = require("../Model/bookingModel");
 const stripeObj = stripe('sk_test_51I57ncLVmgB2cGGS5x64WhstuzdE0UXen7ABgWR8PEQ6gcDGNiChirgGnRhHM3kSYUU5tWkszGDk400XHV7EsOeG00liOmSM3Y');
 async function createPaymentSession(req , res){
     try{
@@ -38,6 +39,10 @@ async function createPaymentSession(req , res){
             error
         })
     }
+}
+
+async function createNewBooking(userEmail, planId) {
+  
 }
 
 module.exports.createPaymentSession = createPaymentSession;
